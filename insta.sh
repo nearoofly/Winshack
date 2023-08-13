@@ -37,12 +37,7 @@ fi
 }
 
 banner() {
-
-printf "\e[1;92m     _                                      \e[1m\n"
-printf "\e[1;92m _  | | https://github.com/Wharkly47/   \e[1m\n"
-printf "\e[1;92m  
-⠀⠀                                 
-⠀                                 
+                              
 printf "\e[1;92m   ⠛⠛⣿⣿⣿⣿⣿⡷⢶⣦⣶⣶⣤⣤⣤⣀⠀⠀⠀\e[1m\n"
 printf "\e[1;92m⠀⠀⠀   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀\e[1m\n"
 printf "\e[1;92m⠀⠀       ⠉⠉⠉⠙⠻⣿⣿⠿⠿⠛⠛⠛⠻⣿⣿⣇⠀        \e[1m\n"    
@@ -76,16 +71,6 @@ wl_pass="${wl_pass:-${default_wl_pass}}"
 default_threads="10"
 read -p $'\e[1;92mThreads (Use < 20, Default 10): \e[0m' threads
 threads="${threads:-${default_threads}}"
-fi
-}
-
-checktor() {
-
-check=$(curl --socks5 localhost:9050 -s https://check.torproject.org > /dev/null; echo $?)
-
-if [[ "$check" -gt 0 ]]; then
-printf "\e[1;91mPlease, check your TOR Connection! Just type tor or service tor start\n\e[0m"
-exit 1
 fi
 
 }
@@ -210,3 +195,4 @@ case "$1" in --resume) resume ;; *)
 start
 bruteforcer
 esac
+
